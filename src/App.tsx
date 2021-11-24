@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Comp1 } from './components/comp1';
+
+interface a1 {
+  login: "yes" | "no"
+}
 
 function App() {
+  const [val, chngval] = React.useState<a1>({ login: "yes" });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div className="App">
+        {"yes" === val.login && <Comp1 name="ripper" num={54} tip={5} type="rich" />}
+      </div>
   );
 }
 
