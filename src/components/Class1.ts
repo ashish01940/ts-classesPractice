@@ -1,3 +1,4 @@
+import { interfaceforPersonclass } from "./interfaces_Comp"
 export const a1 = class ingrediens {
     public salt: string;
     public dough: string;
@@ -45,7 +46,6 @@ export const a1 = class ingrediens {
     }
 }
 
-
 export const a2 = class paneer extends a1 {
     public paneer: (string | number);
     private specialingredient: string;
@@ -57,13 +57,38 @@ export const a2 = class paneer extends a1 {
         this.specialingredient = p_specialingredient;
     }
     creatingpaneer = () => {
-        return this.paneer + ", " + this.salt + ", " + this.water + this.givecost()
+        return this.paneer + ", " + this.salt + ", " + this.water + this.givecost();
     }
     static freedal = () => { // static function can't use any parent properties or methods
-        return "free dal for public"
+        return "free dal for public";
     }
     rough1 = () => {
         return this.otherspices; // protected variable can be accessed in subclass as well 
     }
 }
 
+
+export const a3 = class personclass implements interfaceforPersonclass {
+    public age: number;
+    public name: string;
+    constructor(age: number, name: string) {
+        this.age = age;
+        this.name = name;
+    }
+    public nameandage() {
+        return `person's name is ${this.name} and age is ${this.age}`;
+    }
+    public rough() {
+        return "i am mighty";
+    }
+}
+// export default personclass
+
+export default class Bydefaultclass {
+    private boom1: string;
+    public boom2: number;
+    constructor(b1: string, b2: number) {
+        this.boom1 = b1;
+        this.boom2 = b2;
+    }
+}

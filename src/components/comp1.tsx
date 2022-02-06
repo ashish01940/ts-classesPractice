@@ -1,9 +1,11 @@
 import React from 'react'
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { BrowserRouter, Switch, Route, Link, useHistory } from 'react-router-dom';
+import Interfaces from './interfaces_Comp';
 import Object1Comp from './Object1Comp';
 import Route1 from './route1';
 import UseEffect from './useEffect';
+import { UseMemohook } from './UseMemohook';
 import UseRefComp from './useRefComp';
 import { Variables_ND_Types } from './Variables_ND_Types';
 
@@ -50,8 +52,14 @@ export const Comp1: React.FC<ashish> = ({ name, num, tip = 0 }, props) => {
         <>
             "this is the first component named {name} with {num} and {tip}"
             "tip is {c1}"<br />
+            <button onClick={() => { history.push("/comp1") }}>comp1</button>
+            <button onClick={() => { history.push("/interface") }} >interface comp</button>
+            {/* <Link to="/comp1" >comp1 !</Link> */}
+            <button onClick={() => { history.push("/obj1") }} >object comp</button>
+            {/* <Link to="/obj1" >obj1 !</Link> */}
+            <button onClick={() => { history.push("/usememohook") }} >useMemo hook</button>
 
-            <br />
+            <br /><hr />
 
             {/* <Variables_ND_Types />
             <UseEffect />
@@ -62,11 +70,11 @@ export const Comp1: React.FC<ashish> = ({ name, num, tip = 0 }, props) => {
             <Switch>
                 <Route exact path="/comp1" ><Route1 /></Route>
                 <Route path="/obj1" component={Object1Comp} />
+                <Route path="/interface" component={Interfaces} />
+                <Route path="/usememohook" component={UseMemohook} />
             </Switch>
 
-            <button onClick={() => { history.push("/comp1") }}>click me!</button>
-            <Link to="/comp1" >comp1 !</Link>
-            <Link to="/obj1" >obj1 !</Link>
+
 
         </>
 
