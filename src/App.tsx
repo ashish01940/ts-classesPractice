@@ -3,6 +3,7 @@ import './App.css';
 import { Comp1 } from './components/comp1';
 import RefComp1 from './components/forwarding Ref/refComp1';
 import RefComp2 from './components/forwarding Ref/refComp2';
+import Encapsulation from "./components/classesConcepts/encapsulation";
 
 interface a1 {
   login: "yes" | "no"
@@ -13,7 +14,8 @@ function App() {
   return (
     <div className="App">
       {/* {"yes" === val.login && <Comp1 name="ripper" num={54} tip={5} type="rich" />} */}
-      <RefComp1 />
+      {/* <RefComp1 /> */}
+      <Encapsulation />
     </div>
   );
 }
