@@ -1,3 +1,5 @@
+/* polymorphism means using a distinct or sepreate logic for the same method in different classes this can 
+be achived using method overriding */
 import React, { Component } from 'react';
 
 class mainMethod {
@@ -28,7 +30,7 @@ export class polymorphism extends Component<polyPropsTypes, polyStateTypes> {
   objChild = new mainMethod2();
   render() {
     return <>
-    <h3>NOTE:Enter key also works to submit</h3>
+      <h3>NOTE:Enter key also works to submit</h3>
       <h1>only "ashish" can access using method overriding </h1>
       <input
         onKeyUp={(e: any) => { if (e.keyCode == 13) this.objChild.getInfo(this.state.inputData) }}
